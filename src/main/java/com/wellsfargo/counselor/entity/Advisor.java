@@ -1,31 +1,29 @@
 package com.wellsfargo.counselor.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Advisor {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false,name = "advisorId")
     private long advisorId;
 
-    @Column(nullable = false)
+    @Column(nullable = false,name = "firstname")
     private String firstName;
 
-    @Column(nullable = false)
+    @Column(nullable = false,name = "lastname")
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(nullable = false,name = "address")
     private String address;
 
-    @Column(nullable = false)
+    @Column(nullable = false,name = "phone")
     private String phone;
 
-    @Column(nullable = false)
+    @Column(nullable = false,name = "email")
     private String email;
 
     protected Advisor() {
